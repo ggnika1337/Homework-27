@@ -130,4 +130,147 @@ body {
   height: 444px;
   border-radius: 15px;
   padding: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 37px;
+}
+
+.right-side-bottom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name-joindate {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.inside-namejoindate {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.name {
+  color: white;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.joindate {
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+}
+
+.handle {
+  color: rgba(0, 121, 255, 1);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.info {
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  max-width: 460px;
+  line-height: 25px;
+}
+
+.gap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stats {
+  display: flex;
+  padding-top: 15px;
+  padding-left: 32px;
+  padding-right: 83px;
+  padding-bottom: 17px;
+  justify-content: space-between;
+  background-color: rgba(20, 29, 47, 1);
+  border-radius: 10px;
+  height: 85px;
+}
+
+.stats-text {
+  font-weight: 400;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.stats-numbers {
+  font-weight: 400;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.stat-box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bottom-infos-text {
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-link {
+  color: white;
+  font-weight: 400;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+}
+
+.last-infos {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 429px;
+  width: 100%;
+  height: 63px;
+}
+
+.bottom-info-box {
+  display: flex;
+  max-width: 211px;
+  width: 100%;
+  gap: 19px;
+}
+
+.info-boxes-one {
+  display: flex;
+  justify-content: space-between;
+  gap: 85px;
+}
+
+.info-boxes-two {
+  display: flex;
+  justify-content: space-between;
+  gap: 62px;
+}
+
+.bottom-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 37px;
 }
