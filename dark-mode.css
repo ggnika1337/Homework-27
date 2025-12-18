@@ -3,7 +3,7 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: monospace;
+  font-family: "Space Mono", monospace;
 }
 
 body {
@@ -24,6 +24,18 @@ body {
   display: flex;
 }
 
+img {
+  width: 20px;
+  height: 20px;
+}
+
+.pfp {
+  width: 117px;
+  height: 117px;
+  display: flex;
+  flex-direction: column;
+}
+
 /* top */
 
 .top {
@@ -41,7 +53,7 @@ body {
   border: 0px;
   letter-spacing: 2.5px;
   font-size: 13px;
-  font-weight: 700px;
+  font-weight: 700;
   display: flex;
   align-items: center;
 
@@ -84,13 +96,18 @@ body {
   font-size: 18px;
   font-weight: 300;
   max-width: 435px;
-  min-width: 270px;
+  min-width: 180px;
   width: 100%;
 }
 
 .search-input:focus {
   border: none;
   outline: none;
+}
+
+.change-theme {
+  display: flex;
+  gap: 10px;
 }
 
 .search-button {
@@ -111,8 +128,27 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 195px;
+  max-width: 105px;
   width: 100%;
+}
+
+.first-container {
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+}
+
+.infos {
+  gap: 17px;
+  display: flex;
+  flex-direction: column;
+}
+
+.second-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
 }
 
 .result {
@@ -120,6 +156,7 @@ body {
   color: rgba(247, 70, 70, 1);
   font-weight: 700;
   font-size: 15px;
+  display: none;
 }
 
 /* bottom  */
@@ -131,7 +168,6 @@ body {
   border-radius: 15px;
   padding: 48px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   gap: 37px;
 }
@@ -141,18 +177,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-left: 150px;
 }
 
 .name-joindate {
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 20px;
+  gap: 8px;
 }
 
 .inside-namejoindate {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  height: 95px;
+}
+
+.left-side-bottom {
+  height: 117px;
+  max-width: 150px;
   width: 100%;
 }
 
@@ -167,7 +211,13 @@ body {
   font-size: 15px;
   font-weight: 400;
   display: flex;
-  align-items: center;
+  width: 268px;
+  margin-top: 8px;
+}
+
+.pfp-basicinfo {
+  display: flex;
+  gap: 37px;
 }
 
 .handle {
@@ -186,8 +236,6 @@ body {
 
 .gap {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
 }
 
 .stats {
@@ -230,6 +278,7 @@ body {
   font-size: 15px;
   display: flex;
   align-items: center;
+  height: 22px;
 }
 
 .bottom-link {
@@ -260,7 +309,7 @@ body {
 .info-boxes-one {
   display: flex;
   justify-content: space-between;
-  gap: 85px;
+  gap: 111px;
 }
 
 .info-boxes-two {
@@ -273,4 +322,72 @@ body {
   display: flex;
   flex-direction: column;
   gap: 37px;
+}
+
+.image-container {
+  max-width: 117px;
+  position: relative;
+  min-width: 70px;
+}
+
+.pfp {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-boxes-one {
+    flex-direction: column;
+    gap: 17px;
+  }
+  .info-boxes-two {
+    flex-direction: column;
+    gap: 17px;
+  }
+  .output-box {
+    padding: 24px;
+    gap: 15px;
+  }
+  .right-side-bottom {
+    gap: 2px;
+    justify-content: center;
+    padding-left: 2px;
+  }
+  .bottom-bottom {
+    gap: 10px;
+  }
+  .gap {
+    flex-direction: column;
+  }
+  .stats {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .search-box {
+    padding-left: 16px;
+  }
+  .output-box {
+    flex-direction: column;
+    height: 540px;
+  }
+  .pfp {
+    flex-direction: column;
+    gap: 50px;
+  }
+  .left-side-search {
+    gap: 5px;
+  }
+  .first-container {
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .pfp {
+    gap: 20px;
+  }
+  .right-side-bottom {
+    gap: 24px;
+  }
 }
