@@ -1,3 +1,40 @@
+// SEARCH FUNC
+
+// for style and api
+let form = document.getElementById("form");
+let search = document.getElementById("searchUser");
+let name = document.getElementById("name");
+let joinDate = document.getElementById("joinDate");
+let info = document.getElementById("info");
+// stats
+let repos = document.getElementById("repos");
+let following = document.getElementById("following");
+let followers = document.getElementById("followers");
+// location,twitter,blog,handle
+let locationElement = document.getElementById("location");
+let twitter = document.getElementById("twitter");
+let blog = document.getElementById("blog");
+let blueHandle = document.getElementById("handle");
+let handleElement = document.getElementById("handleElement");
+
+form.addEventListener("submit", async (enter) => {
+  enter.preventDefault();
+
+  async function getUser() {
+    try {
+      const username = search.value.trim();
+      const response = await fetch(`https://api.github.com/users/${username}`);
+      const data = await response.json();
+      name.innerText = data.login;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  getUser();
+});
+
+// DARK/LIGHT THEME FUNC
+
 // for style
 let lightBtn = document.getElementById("changeLightMode");
 let root = document.getElementById("mainContainer");
@@ -19,19 +56,6 @@ let chainLight = document.getElementById("chainLight");
 let chainDark = document.getElementById("chainDark");
 let houseDark = document.getElementById("houseDark");
 let houseLight = document.getElementById("houseLight");
-// for style and api
-let name = document.getElementById("name");
-let joinDate = document.getElementById("joinDate");
-let info = document.getElementById("info");
-// stats
-let repos = document.getElementById("repos");
-let following = document.getElementById("following");
-let followers = document.getElementById("followers");
-// location,twitter,blog,handle
-let locationElement = document.getElementById("location");
-let twitter = document.getElementById("twitter");
-let blog = document.getElementById("blog");
-let handleElement = document.getElementById("handleElement");
 
 let isDarkMode = true;
 changeTheme();
@@ -69,7 +93,7 @@ function changeTheme(isDarkMode) {
     handleElement.style.color = "white";
     moon.style.display = "none";
     sun.style.display = "block";
-    changeLightMode.innerText = "DARK";
+    changeLightMode.innerText = "LIGHT";
     locationDark.style.display = "block";
     locationLight.style.display = "none";
     twitterDark.style.display = "block";
@@ -104,7 +128,7 @@ function changeTheme(isDarkMode) {
     handleElement.style.color = "rgba(75, 106, 155, 1)";
     moon.style.display = "block";
     sun.style.display = "none";
-    changeLightMode.innerText = "LIGHT";
+    changeLightMode.innerText = "DARK";
     locationDark.style.display = "none";
     locationLight.style.display = "block";
     twitterDark.style.display = "none";

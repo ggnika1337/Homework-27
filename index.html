@@ -16,20 +16,23 @@
           <img id="moon" src="images/moon.svg" alt="moon" />
         </div>
       </div>
-      <div class="search-box" id="searchBox">
-        <div class="left-side-search">
-          <img src="images/search.svg" alt="magnifying glass img" />
-          <input
-            class="search-input"
-            type="text"
-            placeholder="Search GitHub username…"
-          />
+      <form id="form">
+        <div class="search-box" id="searchBox">
+          <div class="left-side-search">
+            <img src="images/search.svg" alt="magnifying glass img" />
+            <input
+              class="search-input"
+              id="searchUser"
+              type="text"
+              placeholder="Search GitHub username…"
+            />
+          </div>
+          <div class="result-button">
+            <!-- make result p tag here -->
+            <button type="submit" class="search-button">Search</button>
+          </div>
         </div>
-        <div class="result-button">
-          <!-- make result p tag here -->
-          <button class="search-button">Search</button>
-        </div>
-      </div>
+      </form>
       <div class="output-box" id="output">
         <div class="pfp">
           <div class="first-container">
