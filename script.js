@@ -6,6 +6,8 @@ let search = document.getElementById("searchUser");
 let name = document.getElementById("name");
 let joinDate = document.getElementById("joinDate");
 let info = document.getElementById("info");
+let result = document.getElementById("result");
+let pfp = document.getElementById("pfp");
 // stats
 let repos = document.getElementById("repos");
 let following = document.getElementById("following");
@@ -25,9 +27,33 @@ form.addEventListener("submit", async (enter) => {
       const username = search.value.trim();
       const response = await fetch(`https://api.github.com/users/${username}`);
       const data = await response.json();
-      name.innerText = data.login;
+      if (data.name) {
+        name.innerText = data.name;
+      } else {
+        name.innerText = data.login;
+      }
+      blueHandle.innerText = `@${data.login}`;
+      blueHandle.href = data.html_url;
+      pfp.src = data.avatar_url;
+      info.innerText = data.bio;
+      followers.innerText = data.followers;
+      following.innerText = data.following;
+      locationElement.innerText = data.location;
+      blog.innerText = data.blog;
+      twitter.innerText = data.twitter_username;
+      repos.innerText = data.public_repos;
+      joinDate.innerText = data.created_at;
+      if (!response.ok) {
+        result.style.opacity = 1;
+        pfp.src = "images/pfp.png";
+        name.innerText = "";
+        handleElement.innerText = "";
+        return;
+      } else {
+        result.style.opacity = 0; // hide error
+      }
     } catch (error) {
-      console.log(error);
+      console.log("error");
     }
   }
   getUser();
@@ -102,6 +128,7 @@ function changeTheme(isDarkMode) {
     chainDark.style.display = "none";
     houseLight.style.display = "none";
     houseDark.style.display = "block";
+    search.style.color = "white";
   } else {
     // LIGHTMODE
     document.body.style.backgroundColor = "rgba(246, 248, 255, 1)";
@@ -137,5 +164,6 @@ function changeTheme(isDarkMode) {
     chainDark.style.display = "block";
     houseLight.style.display = "block";
     houseDark.style.display = "none";
+    search.style.color = "rgba(34, 39, 49, 1)";
   }
 }
